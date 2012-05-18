@@ -1,4 +1,4 @@
-function [nbcs,Kbcs] = setup_bc_constraints(bcdof,bcval,nsdof)
+function [nbcs,Kbcs,res_bcs] = setup_bc_constraints(bcdof,bcval,nsdof)
 
 %------------------------------------------------------------------------------
 %

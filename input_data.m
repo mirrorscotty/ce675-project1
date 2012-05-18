@@ -1,7 +1,8 @@
 function [plane_for,nnode,ndof,nel,nnel_v,X,nodes,bcdof,bcval,mat_set_v,mat_list,t,...
-        nodal_forces,surface_tractions] = qstatic_simpleQ4
+        nodal_forces,surface_tractions,no_steps,arc_length] = qstatic_simpleQ4
 
     plane_for='plane_stress';              
+    geo_for='nonlinear';              
     nnode=4;
     ndof=2;
     nel=1;
@@ -28,9 +29,10 @@ function [plane_for,nnode,ndof,nel,nnel_v,X,nodes,bcdof,bcval,mat_set_v,mat_list
     %--------------------------------------------------------------------------
     % Applied forces
     %--------------------------------------------------------------------------
-    nodal_forces=[];                % [d.o.f. where force is applied, value]
-    surface_tractions=[1,2,1,0,-1]; % applied surface tractions:
+    nodal_forces=[7,5];                % [d.o.f. where force is applied, value]
+    surface_tractions=[1,2,1,0,-10]; % applied surface tractions:
                                     % [element no=1, tractions are applied
                                     % on surface z2 = constant, constant =
                                     % 1, traction vector =[0,-1]'
     %--------------------------------------------------------------------------
+    no_steps=8;arc_length=1;
